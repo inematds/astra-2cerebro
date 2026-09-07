@@ -4,6 +4,10 @@
 
 **Seu segundo cérebro com IA, em arquivos e pastas que você controla.**
 
+## 📖 Guia de uso
+
+Guia completo (landing + passo a passo): **https://inematds.github.io/astra-2cerebro/guia/**
+
 Um kit gratuito (MIT) que transforma o **Claude Code** ou o **Codex** em um sistema operacional de IA pessoal: um assistente que conhece você, seu trabalho, suas prioridades e suas ferramentas, e que responde como um sócio, não como um chatbot genérico.
 
 Tudo o que o kit cria são arquivos Markdown e pastas. Nada fica preso a um fornecedor. Troque de modelo, troque de ferramenta, e o cérebro continua seu.
