@@ -1,0 +1,11 @@
+.env
+.env.local
+.DS_Store
+*.log
+__pycache__/
+node_modules/
+.claude/settings.local.json
+entrevistas/
+auditorias/
+apps/*/brain.config.json
+apps/*/data/
