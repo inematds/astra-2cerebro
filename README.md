@@ -156,6 +156,26 @@ Busca, leitura da nota, filtros por categoria, sinalização de páginas velhas 
 
 ---
 
+## Ecossistema: três projetos irmãos
+
+O cérebro é só pastas e Markdown, então ele pode ser lido por mais de um agente e por sistemas que já existem. Três projetos separados fazem isso, todos construídos sobre este kit:
+
+| Projeto | O que faz | Repositório | Guia |
+|---|---|---|---|
+| **cerebro-mcp** | Servidor MCP que expõe o cérebro como ferramentas (10 de leitura, 3 de escrita opt-in) para Claude Code, Codex, Claude Desktop, n8n e bots. Stdio e HTTP local | [inematds/cerebro-mcp](https://github.com/inematds/cerebro-mcp) | [guia](https://inematds.github.io/cerebro-mcp/guia/) |
+| **cerebro-duplo** | Um cérebro, dois agentes: `duplo.sh` com verificação de paridade, sync, perfis de modelo e esforço para Claude Code e Codex, registro de uso, e as skills `qual-agente` e `duplo-verificar` | [inematds/cerebro-duplo](https://github.com/inematds/cerebro-duplo) | [guia](https://inematds.github.io/cerebro-duplo/guia/) |
+| **cerebro-integra** | API HTTP local, bot de Telegram, importadores JSON/CSV/pasta, exportador da wiki, fluxo n8n e ponte de voz. Zero dependências | [inematds/cerebro-integra](https://github.com/inematds/cerebro-integra) | [guia](https://inematds.github.io/cerebro-integra/guia/) |
+
+Qual usar:
+
+- Quer o mesmo cérebro em **outro cliente de IA** (Codex, Claude Desktop, n8n)? `cerebro-mcp`.
+- Usa **Claude Code e Codex** e quer escolher agente e modelo por tarefa sem os manuais desandarem? `cerebro-duplo`.
+- Quer perguntar pelo **Telegram**, mostrar a wiki num **site**, ou alimentar `fontes/` com um **banco** toda noite? `cerebro-integra`.
+
+Limitações conhecidas dos três, para você não ser surpreendido: o modo HTTP do `cerebro-mcp` não tem autenticação e escuta só em `127.0.0.1`; os perfis do `cerebro-duplo` trazem nomes de modelo de exemplo que você edita; o bot do `cerebro-integra` foi testado com Telegram simulado, não com token real. Nos três, a raiz do GitHub Pages dá 404 por desenho e a página fica em `/guia/`.
+
+---
+
 ## Perguntas frequentes
 
 **Preciso saber programar?** Não. Você conversa com o agente. As skills fazem o resto.
