@@ -1,5 +1,7 @@
 # astra-2cerebro
 
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
 ![O segundo cérebro com IA: Contexto, Conexões, Skills, Automação](docs/capa.png)
 
 **Seu segundo cérebro com IA, em arquivos e pastas que você controla.**

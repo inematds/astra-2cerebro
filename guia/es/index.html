@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>astra-2cerebro — Tu segundo cerebro con IA</title>
+<meta content="Kit gratuito que transforma Claude Code o Codex en un segundo cerebro con IA: contexto, conexiones, skills y ritmo, todo en archivos y carpetas que tú controlas." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;margin-bottom:26px}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+<link href="https://inematds.github.io/astra-2cerebro/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/astra-2cerebro/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/astra-2cerebro/guia/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav><div class="wrap">
+<a class="brand" href="#top"><span class="emoji">🧠</span> astra-2cerebro</a>
+<span class="sep">|</span>
+<span class="clubpro">
+<a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+<span class="sep">-</span>
+<a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
+</span>
+<div class="links">
+<a class="sec" href="#oque">Qué es</a>
+<a class="sec" href="#fluxo">Cómo funciona</a>
+<a class="sec" href="#guia">Guía de uso</a>
+<a class="sec" href="#comandos">Comandos</a>
+<a class="sec" href="#roadmap">Hoja de ruta</a>
+<button aria-label="Cambiar tema" class="tgl" id="themeToggle" title="Cambiar tema">🌙</button>
+<a class="btn" href="https://github.com/inematds/astra-2cerebro" rel="noopener" target="_blank">GitHub</a>
+</div>
+</div></nav>
+<header class="hero" id="top">
+<div class="glow"></div>
+<div class="wrap">
+<div>
+<span class="chip">Kit gratuito · Claude Code y Codex</span>
+<h1>Tu segundo cerebro con <span class="amb">IA</span>, en archivos que tú controlas</h1>
+<p class="lead">Un asistente que te conoce, conoce tu trabajo, tus prioridades y tus herramientas. Responde como un socio, no como un chatbot genérico. Todo en Markdown, sin atarte a ningún proveedor.</p>
+<div class="cta">
+<a class="btn" href="#guia">Empezar la guía</a>
+<a class="btn ghost" href="https://github.com/inematds/astra-2cerebro" rel="noopener" target="_blank">Ver en GitHub</a>
+</div>
+</div>
+<figure><img alt="El segundo cerebro con IA: contexto, conexiones, skills y automatización" src="../assets/hero.jpg"/></figure>
+</div>
+</header>
+<section id="oque"><div class="wrap">
+<span class="chip">Qué es</span>
+<h2>Un sistema operativo de IA personal, hecho de carpetas</h2>
+<p class="sub">El kit instala una estructura de archivos y ocho skills en tu Claude Code o Codex. El agente lee el manual antes de cada mensaje, sabe dónde está cada cosa y la busca en vez de adivinar.</p>
+<div class="grid g3">
+<div class="card"><h3>🧠 Te conoce de verdad</h3><p>Una entrevista de 7 preguntas crea el contexto inicial: quién eres, qué haces, para quién, qué importa este trimestre y cómo escribes.</p></div>
+<div class="card"><h3>🔗 Relaciona, no acumula</h3><p>Las transcripciones, los documentos y las notas se convierten en páginas de wiki interconectadas. Las personas, los proyectos, las reuniones y las decisiones aparecen conectados, y el cerebro 3D lo muestra.</p></div>
+<div class="card"><h3>📈 Mejora en ciclos</h3><p>Auditoría con una puntuación de 0 a 100 basada en evidencias; después, una mejora a la vez. El historial muestra la evolución mes a mes.</p></div>
+</div>
+</div></section>
+<section id="fluxo"><div class="wrap">
+<span class="chip">Cómo funciona</span>
+<h2>Cuatro pilares, un ciclo</h2>
+<p class="sub">Contexto y Conexiones forman el segundo cerebro. Capacidades y Cadencia forman el sistema operativo. El orden importa: sin los dos primeros, las skills y automatizaciones quedan genéricas.</p>
+<div class="flow">
+<span>/iniciar</span><span class="arr">→</span>
+<span>usar una semana</span><span class="arr">→</span>
+<span>/auditar</span><span class="arr">→</span>
+<span>/evoluir</span><span class="arr">→</span>
+<span>construir</span><span class="arr">→</span>
+<span>/auditar</span>
+</div>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><span class="num">1</span><h3>Contexto</h3><p>Lo que cambia poco: quién eres, tu trabajo, tus metas y tu público. Está en <code>contexto/</code>, <code>referencias/</code> e <code>wiki/</code>.</p></div>
+<div class="card"><span class="num">2</span><h3>Conexiones</h3><p>Las herramientas del día a día, donde los datos cambian constantemente: correo, agenda, tareas, finanzas. Registradas en <code>conexoes.md</code>.</p></div>
+<div class="card"><span class="num">3</span><h3>Capacidades</h3><p>Una frase corta activa un flujo de varios pasos que entrega algo utilizable. Son las skills en <code>.claude/skills/</code> e <code>.agents/skills/</code>.</p></div>
+<div class="card"><span class="num">4</span><h3>Cadencia</h3><p>Cosas útiles que suceden sin que las pidas, con registro de ejecución en <code>rotinas/</code>. Solo después de que funcionen manualmente.</p></div>
+</div>
+</div></section>
+<section id="pre"><div class="wrap">
+<span class="chip">Requisitos previos</span>
+<h2>Casi nada, aparte del agente que ya usas</h2>
+<p class="sub">No necesitas saber programar. Conversas con el agente y las skills hacen el resto.</p>
+<div class="grid g3">
+<div class="card"><h3>Claude Code o Codex</h3><p>Uno de los dos, instalado y con una suscripción activa. Las skills funcionan igual en ambos.</p><pre><span class="c"># revisa</span>
+<span class="k">claude</span> --version
+<span class="k">codex</span> --version</pre></div>
+<div class="card"><h3>Terminal con bash (opcional)</h3><p>Solo para el instalador de una línea. En Windows, Git Bash o WSL. Sin bash, el propio agente lo instala.</p><pre><span class="c"># Linux, macOS, Git Bash, WSL</span>
+<span class="k">bash</span> --version</pre></div>
+<div class="card"><h3>Node.js 22+ (solo para el cerebro 3D)</h3><p>Quienes usan Claude Code o Codex ya lo tienen. La app 3D funciona sin instalar dependencias.</p><pre><span class="c"># debe ser 22 o superior</span>
+<span class="k">node</span> --version</pre></div>
+</div>
+</div></section>
+<section id="guia"><div class="wrap">
+<span class="chip">Guía de uso · paso a paso</span>
+<h2>De cero a un cerebro auditado en 14 días</h2>
+<p class="sub">Los comandos de abajo funcionan en Claude Code con <code>/</code> y en Codex con <code>$</code>.</p>
+<div class="step"><div class="b">1</div><div>
+<h3>Instala el kit</h3>
+<p>Una línea en el terminal crea la estructura en una carpeta e instala las ocho skills. Volver a ejecutarla es seguro: no sobrescribe nada tuyo.</p>
+<pre><span class="k">curl</span> -fsSL <span class="s">https://raw.githubusercontent.com/inematds/astra-2cerebro/main/install.sh</span> | <span class="k">bash</span> -s -- ~/meu-cerebro</pre>
+<p>¿Sin terminal? Abre el agente en la carpeta que quieras y pega:</p>
+<pre><span class="s">Instale o kit https://github.com/inematds/astra-2cerebro nesta pasta seguindo o INSTALAR.md do repositório e depois rode /iniciar.</span></pre>
+</div></div>
+<div class="step"><div class="b">2</div><div>
+<h3>Haz la entrevista inicial</h3>
+<p>Abre la carpeta en el agente y responde 7 preguntas. Toma unos 15 minutos. La muestra de escritura debe pegarse desde un texto real, no escribirse en el chat.</p>
+<pre><span class="k">cd</span> ~/meu-cerebro
+<span class="k">claude</span>          <span class="c"># o: codex</span>
+<span class="k">/iniciar</span>        <span class="c"># en Codex: $iniciar</span></pre>
+</div></div>
+<div class="step"><div class="b">3</div><div>
+<h3>Haz la prueba del «guau»</h3>
+<p>Abre una conversación nueva y pregunta. Si la respuesta menciona tus prioridades y tu problema real, funcionó.</p>
+<pre><span class="s">Quem sou eu e no que devo focar esta semana?</span></pre>
+</div></div>
+<div class="step"><div class="b">4</div><div>
+<h3>Conecta una herramienta a la vez</h3>
+<p>Piensa en siete áreas: ingresos, clientes, agenda, comunicación, tareas, reuniones y conocimiento. Pídele al agente la mejor opción para cada una.</p>
+<pre><span class="s">Quero conectar o Google Calendar. Qual é o melhor caminho: MCP, API com script, ou exportação?</span>
+<span class="c"># lo configura y registra en conexiones.md y referencias/&lt;ferramenta&gt;-api.md</span></pre>
+</div></div>
+<div class="step"><div class="b">5</div><div>
+<h3>Alimenta el cerebro</h3>
+<p>Entrevistas de 20 minutos sobre un tema a la vez, y material en bruto en <code>fontes/</code> transformado en una wiki interconectada.</p>
+<pre><span class="k">/entrevista</span> prioridades do trimestre
+<span class="k">/entrevista</span> minha equipe e responsabilidades
+<span class="c"># coloca transcripciones y documentos en fuentes/ y luego:</span>
+<span class="k">/wiki</span> ingerir</pre>
+</div></div>
+<div class="step"><div class="b">6</div><div>
+<h3>Audita</h3>
+<p>El día 7, la auditoría califica los cuatro pilares con evidencias, prueba las rutas del manual y guarda un informe fechado. Una instalación nueva queda en «No comprobado». Es lo esperado.</p>
+<pre><span class="k">/auditar</span>
+<span class="c"># informe en auditorias/AAAA-MM-DD-HHMM.md · notas en auditorias/historico.md</span></pre>
+</div></div>
+<div class="step"><div class="b">7</div><div>
+<h3>Cierra una brecha a la vez</h3>
+<p>Lee la última auditoría, elige una brecha, delimita el alcance (eliminar, automatizar o delegar; la menor autonomía que resuelva; una métrica) y entrega un artefacto.</p>
+<pre><span class="k">/evoluir</span>
+<span class="c"># entrega: prompt guardado, script, skill, rutina o reparación verificada</span></pre>
+</div></div>
+<div class="step"><div class="b">8</div><div>
+<h3>Crea rutinas con registro</h3>
+<p>Cuando algo debe ocurrir sin que tú lo pidas. La primera versión siempre es manual; solo se programa después de dos ejecuciones exitosas.</p>
+<pre><span class="k">/rotina</span> toda segunda às 8h, resumo das reuniões da semana passada em projetos/</pre>
+</div></div>
+<div class="step"><div class="b">9</div><div>
+<h3>Mira el cerebro en 3D</h3>
+<p>Un globo interactivo y local con búsqueda, lectura de notas, páginas antiguas u huérfanas señaladas, modo cine y la animación de crecimiento.</p>
+<pre><span class="k">/cerebro-3d</span>
+<span class="c"># genera apps/cerebro-3d/ · después: node build.mjs &amp;&amp; node serve.mjs</span></pre>
+</div></div>
+</div></section>
+<section id="comandos"><div class="wrap">
+<span class="chip">Comandos</span>
+<h2>Las ocho skills</h2>
+<p class="sub">Iguales en Claude Code y Codex. El manual del agente (<code>AGENTS.md</code> = <code>CLAUDE.md</code>) lista todas y mantiene el mapa de rutas.</p>
+<div class="grid g4">
+<div class="card"><h3>/iniciar</h3><p>Entrevista de 7 preguntas. Crea contexto, voz, conexiones y el manual. Vuelve a ejecutarla cuando quieras.</p></div>
+<div class="card"><h3>/entrevista</h3><p>Entrevista profunda sobre un tema, guardando cada respuesta en un archivo.</p></div>
+<div class="card"><h3>/wiki</h3><p>Las fuentes en bruto se convierten en páginas interconectadas con índice y registro. Ingiere, consulta, revisa.</p></div>
+<div class="card"><h3>/vincular</h3><p>Agrega una ruta al manual para un proyecto, carpeta o fuente.</p></div>
+<div class="card"><h3>/auditar</h3><p>Calificación de 0 a 100 de los cuatro pilares, con evidencias e informe fechado.</p></div>
+<div class="card"><h3>/evoluir</h3><p>Cierra una brecha de la auditoría con un artefacto entregado.</p></div>
+<div class="card"><h3>/rotina</h3><p>Rutina recurrente con activador, resultado, instrucciones para detenerla y registro de ejecuciones.</p></div>
+<div class="card"><h3>/cerebro-3d</h3><p>Globo 3D local del conocimiento guardado, en PT-BR, sin instalar dependencias.</p></div>
+</div>
+</div></section>
+<section id="roadmap"><div class="wrap">
+<span class="chip">Hoja de ruta</span>
+<h2>Qué está listo y qué viene después</h2>
+<p class="sub">El kit empieza de forma sencilla a propósito. El archivo <code>EXPANSOES.md</code> dentro del cerebro dice qué agregar a medida que crece y qué no agregar.</p>
+<div class="phase"><div class="tag">v1.0</div><div class="d"><strong>Kit completo</strong><span>Plantilla del cerebro en PT-BR, ocho skills para Claude Code y Codex, instalador idempotente, auditoría con historial, wiki, rutinas y cerebro 3D traducido.</span></div></div>
+<div class="phase"><div class="tag">Después</div><div class="d"><strong>Panel local</strong><span>Agenda, mensajes y métricas en una sola pantalla, leyendo las mismas conexiones del cerebro. Pídeselo al agente después de que existan las conexiones.</span></div></div>
+<div class="phase"><div class="tag">Después</div><div class="d"><strong>Instalador de PowerShell</strong><span>Hoy, en Windows sin Git Bash o WSL, se usa la ruta del agente, que copia los archivos por ti.</span></div></div>
+<div class="phase"><div class="tag">Después</div><div class="d"><strong>Más adaptadores en 3D</strong><span>Lectura directa de exportaciones de Notion, Drive y transcripciones en JSON, además de Markdown y la memoria de los agentes.</span></div></div>
+</div></section>
+<footer>
+<div class="wrap">
+<div class="pill">Markdown</div><div class="pill">Claude Code</div><div class="pill">Codex</div><div class="pill">Bash</div><div class="pill">Node.js</div>
+<p style="margin-top:18px">astra-2cerebro · MIT ·
+      <a href="https://github.com/inematds/astra-2cerebro">github.com/inematds/astra-2cerebro</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+  (function(){
+    var KEY='astra-2cerebro-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

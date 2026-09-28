@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>astra-2cerebro — Seu segundo cérebro com IA</title>
-<meta name="description" content="Kit gratuito que transforma o Claude Code ou o Codex em um segundo cérebro com IA: contexto, conexões, skills e cadência, tudo em arquivos e pastas que você controla.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<meta content="Kit gratuito que transforma o Claude Code ou o Codex em um segundo cérebro com IA: contexto, conexões, skills e cadência, tudo em arquivos e pastas que você controla." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
@@ -90,196 +91,177 @@
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
 </style>
-</head>
-<body>
-
+<link href="https://inematds.github.io/astra-2cerebro/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/astra-2cerebro/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/astra-2cerebro/guia/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <nav><div class="wrap">
-  <a class="brand" href="#top"><span class="emoji">🧠</span> astra-2cerebro</a>
-  <span class="sep">|</span>
-  <span class="clubpro">
-    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
-    <span class="sep">-</span>
-    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
-  </span>
-  <div class="links">
-    <a class="sec" href="#oque">O que é</a>
-    <a class="sec" href="#fluxo">Como funciona</a>
-    <a class="sec" href="#guia">Guia de uso</a>
-    <a class="sec" href="#comandos">Comandos</a>
-    <a class="sec" href="#roadmap">Roadmap</a>
-    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
-    <a class="btn" href="https://github.com/inematds/astra-2cerebro" target="_blank" rel="noopener">GitHub</a>
-  </div>
+<a class="brand" href="#top"><span class="emoji">🧠</span> astra-2cerebro</a>
+<span class="sep">|</span>
+<span class="clubpro">
+<a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+<span class="sep">-</span>
+<a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
+</span>
+<div class="links">
+<a class="sec" href="#oque">O que é</a>
+<a class="sec" href="#fluxo">Como funciona</a>
+<a class="sec" href="#guia">Guia de uso</a>
+<a class="sec" href="#comandos">Comandos</a>
+<a class="sec" href="#roadmap">Roadmap</a>
+<button aria-label="Alternar tema" class="tgl" id="themeToggle" title="Alternar tema">🌙</button>
+<a class="btn" href="https://github.com/inematds/astra-2cerebro" rel="noopener" target="_blank">GitHub</a>
+</div>
 </div></nav>
-
 <header class="hero" id="top">
-  <div class="glow"></div>
-  <div class="wrap">
-    <div>
-      <span class="chip">Kit gratuito · Claude Code e Codex</span>
-      <h1>Seu segundo cérebro com <span class="amb">IA</span>, em arquivos que você controla</h1>
-      <p class="lead">Um assistente que conhece você, seu trabalho, suas prioridades e suas ferramentas. Responde como um sócio, não como um chatbot genérico. Tudo em Markdown, sem prender você a fornecedor nenhum.</p>
-      <div class="cta">
-        <a class="btn" href="#guia">Começar o guia</a>
-        <a class="btn ghost" href="https://github.com/inematds/astra-2cerebro" target="_blank" rel="noopener">Ver no GitHub</a>
-      </div>
-    </div>
-    <figure><img src="assets/hero.jpg" alt="O segundo cérebro com IA: contexto, conexões, skills e automação"></figure>
-  </div>
+<div class="glow"></div>
+<div class="wrap">
+<div>
+<span class="chip">Kit gratuito · Claude Code e Codex</span>
+<h1>Seu segundo cérebro com <span class="amb">IA</span>, em arquivos que você controla</h1>
+<p class="lead">Um assistente que conhece você, seu trabalho, suas prioridades e suas ferramentas. Responde como um sócio, não como um chatbot genérico. Tudo em Markdown, sem prender você a fornecedor nenhum.</p>
+<div class="cta">
+<a class="btn" href="#guia">Começar o guia</a>
+<a class="btn ghost" href="https://github.com/inematds/astra-2cerebro" rel="noopener" target="_blank">Ver no GitHub</a>
+</div>
+</div>
+<figure><img alt="O segundo cérebro com IA: contexto, conexões, skills e automação" src="assets/hero.jpg"/></figure>
+</div>
 </header>
-
 <section id="oque"><div class="wrap">
-  <span class="chip">O que é</span>
-  <h2>Um sistema operacional de IA pessoal, feito de pastas</h2>
-  <p class="sub">O kit instala uma estrutura de arquivos e oito skills no seu Claude Code ou Codex. O agente lê o manual antes de cada mensagem, sabe onde cada coisa vive e vai buscar em vez de chutar.</p>
-  <div class="grid g3">
-    <div class="card"><h3>🧠 Conhece você de verdade</h3><p>Uma entrevista de 7 perguntas cria o contexto inicial: quem você é, o que faz, para quem, o que importa neste trimestre e como você escreve.</p></div>
-    <div class="card"><h3>🔗 Relaciona, não acumula</h3><p>Transcrições, documentos e notas viram páginas de wiki interligadas. Pessoa, projeto, reunião e decisão aparecem conectados, e o cérebro 3D mostra isso.</p></div>
-    <div class="card"><h3>📈 Melhora em ciclo</h3><p>Auditoria com nota de 0 a 100 baseada em evidências, depois uma melhoria por vez. O histórico mostra a evolução mês a mês.</p></div>
-  </div>
+<span class="chip">O que é</span>
+<h2>Um sistema operacional de IA pessoal, feito de pastas</h2>
+<p class="sub">O kit instala uma estrutura de arquivos e oito skills no seu Claude Code ou Codex. O agente lê o manual antes de cada mensagem, sabe onde cada coisa vive e vai buscar em vez de chutar.</p>
+<div class="grid g3">
+<div class="card"><h3>🧠 Conhece você de verdade</h3><p>Uma entrevista de 7 perguntas cria o contexto inicial: quem você é, o que faz, para quem, o que importa neste trimestre e como você escreve.</p></div>
+<div class="card"><h3>🔗 Relaciona, não acumula</h3><p>Transcrições, documentos e notas viram páginas de wiki interligadas. Pessoa, projeto, reunião e decisão aparecem conectados, e o cérebro 3D mostra isso.</p></div>
+<div class="card"><h3>📈 Melhora em ciclo</h3><p>Auditoria com nota de 0 a 100 baseada em evidências, depois uma melhoria por vez. O histórico mostra a evolução mês a mês.</p></div>
+</div>
 </div></section>
-
 <section id="fluxo"><div class="wrap">
-  <span class="chip">Como funciona</span>
-  <h2>Quatro pilares, um ciclo</h2>
-  <p class="sub">Contexto e Conexões formam o segundo cérebro. Capacidades e Cadência formam o sistema operacional. A ordem importa: sem os dois primeiros, skills e automações saem genéricas.</p>
-  <div class="flow">
-    <span>/iniciar</span><span class="arr">→</span>
-    <span>usar uma semana</span><span class="arr">→</span>
-    <span>/auditar</span><span class="arr">→</span>
-    <span>/evoluir</span><span class="arr">→</span>
-    <span>construir</span><span class="arr">→</span>
-    <span>/auditar</span>
-  </div>
-  <div class="grid g4" style="margin-top:28px">
-    <div class="card"><span class="num">1</span><h3>Contexto</h3><p>O que muda pouco: quem você é, seu trabalho, metas, público. Vive em <code>contexto/</code>, <code>referencias/</code> e <code>wiki/</code>.</p></div>
-    <div class="card"><span class="num">2</span><h3>Conexões</h3><p>As ferramentas do dia a dia, onde o dado muda sempre: e-mail, agenda, tarefas, finanças. Registradas em <code>conexoes.md</code>.</p></div>
-    <div class="card"><span class="num">3</span><h3>Capacidades</h3><p>Uma frase curta dispara um fluxo de vários passos que entrega algo usável. São as skills em <code>.claude/skills/</code> e <code>.agents/skills/</code>.</p></div>
-    <div class="card"><span class="num">4</span><h3>Cadência</h3><p>Coisas úteis acontecendo sem você pedir, com registro de execução em <code>rotinas/</code>. Só depois que funcionam manualmente.</p></div>
-  </div>
+<span class="chip">Como funciona</span>
+<h2>Quatro pilares, um ciclo</h2>
+<p class="sub">Contexto e Conexões formam o segundo cérebro. Capacidades e Cadência formam o sistema operacional. A ordem importa: sem os dois primeiros, skills e automações saem genéricas.</p>
+<div class="flow">
+<span>/iniciar</span><span class="arr">→</span>
+<span>usar uma semana</span><span class="arr">→</span>
+<span>/auditar</span><span class="arr">→</span>
+<span>/evoluir</span><span class="arr">→</span>
+<span>construir</span><span class="arr">→</span>
+<span>/auditar</span>
+</div>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><span class="num">1</span><h3>Contexto</h3><p>O que muda pouco: quem você é, seu trabalho, metas, público. Vive em <code>contexto/</code>, <code>referencias/</code> e <code>wiki/</code>.</p></div>
+<div class="card"><span class="num">2</span><h3>Conexões</h3><p>As ferramentas do dia a dia, onde o dado muda sempre: e-mail, agenda, tarefas, finanças. Registradas em <code>conexoes.md</code>.</p></div>
+<div class="card"><span class="num">3</span><h3>Capacidades</h3><p>Uma frase curta dispara um fluxo de vários passos que entrega algo usável. São as skills em <code>.claude/skills/</code> e <code>.agents/skills/</code>.</p></div>
+<div class="card"><span class="num">4</span><h3>Cadência</h3><p>Coisas úteis acontecendo sem você pedir, com registro de execução em <code>rotinas/</code>. Só depois que funcionam manualmente.</p></div>
+</div>
 </div></section>
-
 <section id="pre"><div class="wrap">
-  <span class="chip">Pré-requisitos</span>
-  <h2>Quase nada além do agente que você já usa</h2>
-  <p class="sub">Você não precisa saber programar. Você conversa com o agente e as skills fazem o resto.</p>
-  <div class="grid g3">
-    <div class="card"><h3>Claude Code ou Codex</h3><p>Um dos dois, instalado e com assinatura ativa. As skills funcionam igual nos dois.</p><pre><span class="c"># confira</span>
+<span class="chip">Pré-requisitos</span>
+<h2>Quase nada além do agente que você já usa</h2>
+<p class="sub">Você não precisa saber programar. Você conversa com o agente e as skills fazem o resto.</p>
+<div class="grid g3">
+<div class="card"><h3>Claude Code ou Codex</h3><p>Um dos dois, instalado e com assinatura ativa. As skills funcionam igual nos dois.</p><pre><span class="c"># confira</span>
 <span class="k">claude</span> --version
 <span class="k">codex</span> --version</pre></div>
-    <div class="card"><h3>Terminal com bash (opcional)</h3><p>Só para o instalador de uma linha. No Windows, Git Bash ou WSL. Sem bash, o próprio agente instala.</p><pre><span class="c"># Linux, macOS, Git Bash, WSL</span>
+<div class="card"><h3>Terminal com bash (opcional)</h3><p>Só para o instalador de uma linha. No Windows, Git Bash ou WSL. Sem bash, o próprio agente instala.</p><pre><span class="c"># Linux, macOS, Git Bash, WSL</span>
 <span class="k">bash</span> --version</pre></div>
-    <div class="card"><h3>Node.js 22+ (só para o cérebro 3D)</h3><p>Quem usa Claude Code ou Codex já tem. O app 3D roda sem instalar dependências.</p><pre><span class="c"># precisa ser 22 ou maior</span>
+<div class="card"><h3>Node.js 22+ (só para o cérebro 3D)</h3><p>Quem usa Claude Code ou Codex já tem. O app 3D roda sem instalar dependências.</p><pre><span class="c"># precisa ser 22 ou maior</span>
 <span class="k">node</span> --version</pre></div>
-  </div>
+</div>
 </div></section>
-
 <section id="guia"><div class="wrap">
-  <span class="chip">Guia de uso · passo a passo</span>
-  <h2>Do zero ao cérebro auditado em 14 dias</h2>
-  <p class="sub">Os comandos abaixo valem no Claude Code com <code>/</code> e no Codex com <code>$</code>.</p>
-
-  <div class="step"><div class="b">1</div><div>
-    <h3>Instale o kit</h3>
-    <p>Uma linha no terminal cria a estrutura numa pasta e instala as oito skills. Rodar de novo é seguro: nada seu é sobrescrito.</p>
+<span class="chip">Guia de uso · passo a passo</span>
+<h2>Do zero ao cérebro auditado em 14 dias</h2>
+<p class="sub">Os comandos abaixo valem no Claude Code com <code>/</code> e no Codex com <code>$</code>.</p>
+<div class="step"><div class="b">1</div><div>
+<h3>Instale o kit</h3>
+<p>Uma linha no terminal cria a estrutura numa pasta e instala as oito skills. Rodar de novo é seguro: nada seu é sobrescrito.</p>
 <pre><span class="k">curl</span> -fsSL <span class="s">https://raw.githubusercontent.com/inematds/astra-2cerebro/main/install.sh</span> | <span class="k">bash</span> -s -- ~/meu-cerebro</pre>
-    <p>Sem terminal? Abra o agente na pasta desejada e cole:</p>
+<p>Sem terminal? Abra o agente na pasta desejada e cole:</p>
 <pre><span class="s">Instale o kit https://github.com/inematds/astra-2cerebro nesta pasta seguindo o INSTALAR.md do repositório e depois rode /iniciar.</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">2</div><div>
-    <h3>Rode a entrevista inicial</h3>
-    <p>Abra a pasta no agente e responda 7 perguntas. Leva uns 15 minutos. A amostra de escrita tem que ser colada de um texto real, não digitada no chat.</p>
+</div></div>
+<div class="step"><div class="b">2</div><div>
+<h3>Rode a entrevista inicial</h3>
+<p>Abra a pasta no agente e responda 7 perguntas. Leva uns 15 minutos. A amostra de escrita tem que ser colada de um texto real, não digitada no chat.</p>
 <pre><span class="k">cd</span> ~/meu-cerebro
 <span class="k">claude</span>          <span class="c"># ou: codex</span>
 <span class="k">/iniciar</span>        <span class="c"># no Codex: $iniciar</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">3</div><div>
-    <h3>Faça o teste do "uau"</h3>
-    <p>Abra uma conversa nova e pergunte. Se a resposta citar suas prioridades e sua dor real, funcionou.</p>
+</div></div>
+<div class="step"><div class="b">3</div><div>
+<h3>Faça o teste do "uau"</h3>
+<p>Abra uma conversa nova e pergunte. Se a resposta citar suas prioridades e sua dor real, funcionou.</p>
 <pre><span class="s">Quem sou eu e no que devo focar esta semana?</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">4</div><div>
-    <h3>Conecte uma ferramenta por vez</h3>
-    <p>Pense em sete domínios: receita, clientes, agenda, comunicação, tarefas, reuniões, conhecimento. Peça ao agente o melhor caminho para cada um.</p>
+</div></div>
+<div class="step"><div class="b">4</div><div>
+<h3>Conecte uma ferramenta por vez</h3>
+<p>Pense em sete domínios: receita, clientes, agenda, comunicação, tarefas, reuniões, conhecimento. Peça ao agente o melhor caminho para cada um.</p>
 <pre><span class="s">Quero conectar o Google Calendar. Qual é o melhor caminho: MCP, API com script, ou exportação?</span>
 <span class="c"># ele configura e registra em conexoes.md e referencias/&lt;ferramenta&gt;-api.md</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">5</div><div>
-    <h3>Alimente o cérebro</h3>
-    <p>Entrevistas de 20 minutos sobre um tema por vez, e material bruto em <code>fontes/</code> transformado em wiki interligada.</p>
+</div></div>
+<div class="step"><div class="b">5</div><div>
+<h3>Alimente o cérebro</h3>
+<p>Entrevistas de 20 minutos sobre um tema por vez, e material bruto em <code>fontes/</code> transformado em wiki interligada.</p>
 <pre><span class="k">/entrevista</span> prioridades do trimestre
 <span class="k">/entrevista</span> minha equipe e responsabilidades
 <span class="c"># jogue transcrições e documentos em fontes/ e então:</span>
 <span class="k">/wiki</span> ingerir</pre>
-  </div></div>
-
-  <div class="step"><div class="b">6</div><div>
-    <h3>Audite</h3>
-    <p>No dia 7, a auditoria pontua os quatro pilares com evidências, testa as rotas do manual e salva um relatório datado. Uma instalação nova fica em "Não comprovado". É esperado.</p>
+</div></div>
+<div class="step"><div class="b">6</div><div>
+<h3>Audite</h3>
+<p>No dia 7, a auditoria pontua os quatro pilares com evidências, testa as rotas do manual e salva um relatório datado. Uma instalação nova fica em "Não comprovado". É esperado.</p>
 <pre><span class="k">/auditar</span>
 <span class="c"># relatório em auditorias/AAAA-MM-DD-HHMM.md · notas em auditorias/historico.md</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">7</div><div>
-    <h3>Evolua uma lacuna por vez</h3>
-    <p>Lê a última auditoria, escolhe uma lacuna, escopa (eliminar, automatizar ou delegar; menor autonomia que resolve; uma métrica) e entrega um artefato.</p>
+</div></div>
+<div class="step"><div class="b">7</div><div>
+<h3>Evolua uma lacuna por vez</h3>
+<p>Lê a última auditoria, escolhe uma lacuna, escopa (eliminar, automatizar ou delegar; menor autonomia que resolve; uma métrica) e entrega um artefato.</p>
 <pre><span class="k">/evoluir</span>
 <span class="c"># entrega: prompt salvo, script, skill, rotina ou conserto verificado</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">8</div><div>
-    <h3>Crie rotinas com registro</h3>
-    <p>Quando algo precisa acontecer sem você pedir. A primeira versão é sempre manual; só vira agendada depois de duas execuções boas.</p>
+</div></div>
+<div class="step"><div class="b">8</div><div>
+<h3>Crie rotinas com registro</h3>
+<p>Quando algo precisa acontecer sem você pedir. A primeira versão é sempre manual; só vira agendada depois de duas execuções boas.</p>
 <pre><span class="k">/rotina</span> toda segunda às 8h, resumo das reuniões da semana passada em projetos/</pre>
-  </div></div>
-
-  <div class="step"><div class="b">9</div><div>
-    <h3>Veja o cérebro em 3D</h3>
-    <p>Um globo interativo e local com busca, leitura de notas, páginas velhas ou órfãs sinalizadas, modo cinema e a animação de crescimento.</p>
+</div></div>
+<div class="step"><div class="b">9</div><div>
+<h3>Veja o cérebro em 3D</h3>
+<p>Um globo interativo e local com busca, leitura de notas, páginas velhas ou órfãs sinalizadas, modo cinema e a animação de crescimento.</p>
 <pre><span class="k">/cerebro-3d</span>
 <span class="c"># gera apps/cerebro-3d/ · depois: node build.mjs &amp;&amp; node serve.mjs</span></pre>
-  </div></div>
+</div></div>
 </div></section>
-
 <section id="comandos"><div class="wrap">
-  <span class="chip">Comandos</span>
-  <h2>As oito skills</h2>
-  <p class="sub">Iguais no Claude Code e no Codex. O manual do agente (<code>AGENTS.md</code> = <code>CLAUDE.md</code>) lista todas e mantém o mapa de rotas.</p>
-  <div class="grid g4">
-    <div class="card"><h3>/iniciar</h3><p>Entrevista de 7 perguntas. Cria contexto, voz, conexões e o manual. Rode de novo quando quiser.</p></div>
-    <div class="card"><h3>/entrevista</h3><p>Entrevista profunda sobre um tema, salvando cada resposta em arquivo.</p></div>
-    <div class="card"><h3>/wiki</h3><p>Fontes brutas viram páginas interligadas com índice e log. Ingerir, consultar, revisar.</p></div>
-    <div class="card"><h3>/vincular</h3><p>Adiciona uma rota no manual para um projeto, pasta ou fonte.</p></div>
-    <div class="card"><h3>/auditar</h3><p>Nota de 0 a 100 dos quatro pilares, com evidências e relatório datado.</p></div>
-    <div class="card"><h3>/evoluir</h3><p>Fecha uma lacuna da auditoria com um artefato entregue.</p></div>
-    <div class="card"><h3>/rotina</h3><p>Rotina recorrente com gatilho, saída, como parar e registro de execuções.</p></div>
-    <div class="card"><h3>/cerebro-3d</h3><p>Globo 3D local do conhecimento salvo, em PT-BR, sem instalar dependências.</p></div>
-  </div>
+<span class="chip">Comandos</span>
+<h2>As oito skills</h2>
+<p class="sub">Iguais no Claude Code e no Codex. O manual do agente (<code>AGENTS.md</code> = <code>CLAUDE.md</code>) lista todas e mantém o mapa de rotas.</p>
+<div class="grid g4">
+<div class="card"><h3>/iniciar</h3><p>Entrevista de 7 perguntas. Cria contexto, voz, conexões e o manual. Rode de novo quando quiser.</p></div>
+<div class="card"><h3>/entrevista</h3><p>Entrevista profunda sobre um tema, salvando cada resposta em arquivo.</p></div>
+<div class="card"><h3>/wiki</h3><p>Fontes brutas viram páginas interligadas com índice e log. Ingerir, consultar, revisar.</p></div>
+<div class="card"><h3>/vincular</h3><p>Adiciona uma rota no manual para um projeto, pasta ou fonte.</p></div>
+<div class="card"><h3>/auditar</h3><p>Nota de 0 a 100 dos quatro pilares, com evidências e relatório datado.</p></div>
+<div class="card"><h3>/evoluir</h3><p>Fecha uma lacuna da auditoria com um artefato entregue.</p></div>
+<div class="card"><h3>/rotina</h3><p>Rotina recorrente com gatilho, saída, como parar e registro de execuções.</p></div>
+<div class="card"><h3>/cerebro-3d</h3><p>Globo 3D local do conhecimento salvo, em PT-BR, sem instalar dependências.</p></div>
+</div>
 </div></section>
-
 <section id="roadmap"><div class="wrap">
-  <span class="chip">Roadmap</span>
-  <h2>O que está pronto e o que vem depois</h2>
-  <p class="sub">O kit começa enxuto de propósito. O arquivo <code>EXPANSOES.md</code> dentro do cérebro diz o que adicionar conforme ele cresce, e o que não adicionar.</p>
-  <div class="phase"><div class="tag">v1.0</div><div class="d"><strong>Kit completo</strong><span>Template do cérebro em PT-BR, oito skills para Claude Code e Codex, instalador idempotente, auditoria com histórico, wiki, rotinas e cérebro 3D traduzido.</span></div></div>
-  <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Painel local</strong><span>Agenda, mensagens e métricas em uma tela só, lendo as mesmas conexões do cérebro. Pedido ao agente depois que as conexões existirem.</span></div></div>
-  <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Instalador PowerShell</strong><span>Hoje o Windows sem Git Bash ou WSL usa o caminho pelo agente, que copia os arquivos por você.</span></div></div>
-  <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Mais adaptadores no 3D</strong><span>Leitura direta de exportações de Notion, Drive e transcrições em JSON, além de Markdown e memória dos agentes.</span></div></div>
+<span class="chip">Roadmap</span>
+<h2>O que está pronto e o que vem depois</h2>
+<p class="sub">O kit começa enxuto de propósito. O arquivo <code>EXPANSOES.md</code> dentro do cérebro diz o que adicionar conforme ele cresce, e o que não adicionar.</p>
+<div class="phase"><div class="tag">v1.0</div><div class="d"><strong>Kit completo</strong><span>Template do cérebro em PT-BR, oito skills para Claude Code e Codex, instalador idempotente, auditoria com histórico, wiki, rotinas e cérebro 3D traduzido.</span></div></div>
+<div class="phase"><div class="tag">Depois</div><div class="d"><strong>Painel local</strong><span>Agenda, mensagens e métricas em uma tela só, lendo as mesmas conexões do cérebro. Pedido ao agente depois que as conexões existirem.</span></div></div>
+<div class="phase"><div class="tag">Depois</div><div class="d"><strong>Instalador PowerShell</strong><span>Hoje o Windows sem Git Bash ou WSL usa o caminho pelo agente, que copia os arquivos por você.</span></div></div>
+<div class="phase"><div class="tag">Depois</div><div class="d"><strong>Mais adaptadores no 3D</strong><span>Leitura direta de exportações de Notion, Drive e transcrições em JSON, além de Markdown e memória dos agentes.</span></div></div>
 </div></section>
-
 <footer>
-  <div class="wrap">
-    <div class="pill">Markdown</div><div class="pill">Claude Code</div><div class="pill">Codex</div><div class="pill">Bash</div><div class="pill">Node.js</div>
-    <p style="margin-top:18px">astra-2cerebro · MIT ·
+<div class="wrap">
+<div class="pill">Markdown</div><div class="pill">Claude Code</div><div class="pill">Codex</div><div class="pill">Bash</div><div class="pill">Node.js</div>
+<p style="margin-top:18px">astra-2cerebro · MIT ·
       <a href="https://github.com/inematds/astra-2cerebro">github.com/inematds/astra-2cerebro</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
-  </div>
+</div>
 </footer>
-
 <script>
   (function(){
     var KEY='astra-2cerebro-theme';
